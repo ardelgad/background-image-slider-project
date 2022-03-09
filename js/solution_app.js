@@ -1,6 +1,6 @@
 // immediate invoked function expression
 
-(function() {
+(function () {
   const pictures = [
     "contBcg-0",
     "contBcg-1",
@@ -10,25 +10,25 @@
   ];
 
   //select both left and right button. Add event listeners
-  const buttons = document.querySelectorAll('.btn')
+  const btns = document.querySelectorAll('.btn')
   const imageDIV = document.querySelector('.img-container')
-  let counter = 0
+  let i = 0
 
-  buttons.forEach(function(button){
-    button.addEventListener('click', function(e){
-      if (button.classList.contains('btn-left')){
-        counter--
-        if(counter < 0){
-          counter = pictures.length -1
+  btns.forEach(function (button) {
+    button.addEventListener('click', function (e) {
+      if (button.classList.contains('btn-left')) {
+        i--
+        if (i < 0) {
+          i = pictures.length - 1
         }
-        imageDIV.style.backgroundImage = `url('./img/${pictures[counter]}.jpeg')`
+        imageDIV.style.backgroundImage = `url('./img/${pictures[i]}.jpeg')`
       }
-      if (button.classList.contains('btn-right')){
-        counter++
-        if(counter > pictures.length -1){
-          counter = 0
+      if (button.classList.contains('btn-right')) {
+        i++
+        if (i > pictures.length - 1) {
+          i = 0
         }
-        imageDIV.style.backgroundImage = `url('./img/${pictures[counter]}.jpeg')`
+        imageDIV.style.backgroundImage = `url('./img/${pictures[i]}.jpeg')`
       }
     })
   })
